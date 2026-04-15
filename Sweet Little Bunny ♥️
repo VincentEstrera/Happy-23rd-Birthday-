@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Dearest Bunny 🐰</title>
+    <style>
+        :root {
+            --primary-pink: #ff9a9e;
+            --accent-pink: #d63384;
+            --soft-white: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .letter-container {
+            background: var(--soft-white);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 550px;
+            width: 85%;
+            max-height: 85vh;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-pink) transparent;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--accent-pink);
+            font-size: 2.2em;
+            margin: 0;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.05));
+        }
+
+        .header p {
+            color: #e91e63;
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .content {
+            line-height: 1.8;
+            font-size: 1.15em;
+            color: #333;
+            text-align: left;
+            white-space: pre-line;
+        }
+
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+            font-style: italic;
+            color: var(--accent-pink);
+            font-size: 1.3em;
+            border-top: 2px dashed #ffb6c1;
+            padding-top: 20px;
+        }
+
+        /* Floating Elements */
+        .floating {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            animation: floatUp linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Mobile View */
+        @media (max-width: 480px) {
+            .letter-container { padding: 25px; width: 90%; }
+            .header h1 { font-size: 1.6em; }
+            .content { font-size: 1.05em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="letter-container">
+        <div class="header">
+            <h1>Dearest Sweet Little Bunny</h1>
+            <p>Happy 23rd Birthday, My Love!</p>
+        </div>
+        <div class="content">
+            Baby ko, sa special day mo ngayon, heart ko'y puno ng saya seeing you smile na abot-tenga, lalo na kapag tayo'y magkasama. Those sparkling eyes mo, kumikinang kapag maarawan, sobrang ganda mo, nakakaakit, nakakabighani, at nakakaangkin ng buong puso ko. 
+
+            Mabait ka, matulungin, masipag, matyaga, pursigido sa buhay at pag-aaral. Consistent, mapagmahal, soft sa'kin, maalaga, mahinhin. Lagi mong sinasabi "suko na" sa buhay, pag-aaral, pinansya, family, kaibigan, kahit sa sarili mo. Nahihirapan ka, nagkakasakit, pero matatag ka. 
+
+            Kahit alam kong kaya mo mag-isa dahil napakatapang mo, tandaan mo na hindi mo na kailangang mag-isa dahil nandito ako. Konti na lang, makaka-graduate ka na! Successful ka na. Proud na proud ako sa'yo, sa klase ng babae at partner na meron ako. 
+
+            Sinusuportahan kita palagi, wherever your path leads. Kasama ako sa daan mo patungo sa kinabukasan natin. Matalino ka, makulit, maganda, kahit overthink ka sa insecurities mo, mawalan ng confidence, andito ako: "Mahal kita, gusto kita, wag kang mag-alala." Pipiliin kita araw-araw. Tanggap kita maging sino ka man, basta magpakatotoo ka lang. Walang makakapantay sa'yo. 
+
+            Bilang panganay, marami kang responsibilities, hindi ka na mag-iisa sa pangarap at problema. Gabayan kita sa lahat ng decisions mo. Patuloy akong magbabago for the better, para maging perfect boyfriend, husband material para sa'yo, sa future natin. 
+
+            Ingatan mo sarili mo ha? Masakitin ka pa naman. Balang araw, pag magsama na tayo, aalagaan kita nang maayos. Kasama ako sa future mo, sa pangarap mo. Nakalaan na ako para sa'yo, habang buhay. Sigurado ako sa'yo. Alam ng Diyos kung gaano kita kamahal.
+
+            Happy 23rd Birthday, my love, my dearest sweet little bunny. I love you forever.
+        </div>
+        <div class="signature">
+            Your forever, Val
+        </div>
+    </div>
+
+    <script>
+        function createFloatingElement() {
+            const elements = ['💕', '💖', '🐰', '✨', '🌸'];
+            const el = document.createElement('div');
+            el.className = 'floating';
+            el.innerText = elements[Math.floor(Math.random() * elements.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            
+            // Randomize size and duration
+            const size = Math.random() * 20 + 15;
+            const duration = Math.random() * 3 + 5;
+            
+            el.style.fontSize = size + 'px';
+            el.style.animationDuration = duration + 's';
+            
+            document.body.appendChild(el);
+
+            // Remove element after animation
+            setTimeout(() => {
+                el.remove();
+            }, duration * 1000);
+        }
+
+        // Create elements continuously
+        setInterval(createFloatingElement, 400);
+    </script>
+</body>
+</html>
